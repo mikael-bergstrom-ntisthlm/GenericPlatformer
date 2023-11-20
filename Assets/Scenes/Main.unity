@@ -123,6 +123,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &205274638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8682108910456126295, guid: 0dcd77c74e0cb754a9808dbcc6b5af3a, type: 3}
+  m_PrefabInstance: {fileID: 6129840629252643953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &205274648
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205274638}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 0.64, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &354886250
 GameObject:
   m_ObjectHideFlags: 0
@@ -4669,6 +4719,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2391467910340615677, guid: 4a3d960a14e7d2d44855e9b530b2d997, type: 3}
+      propertyPath: layersToIgnore.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5236014308383498327, guid: 4a3d960a14e7d2d44855e9b530b2d997, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.91
@@ -4778,10 +4832,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UntitledHero
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 478541356011617176, guid: 0dcd77c74e0cb754a9808dbcc6b5af3a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8682108910456126295, guid: 0dcd77c74e0cb754a9808dbcc6b5af3a, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 205274648}
   m_SourcePrefab: {fileID: 100100000, guid: 0dcd77c74e0cb754a9808dbcc6b5af3a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

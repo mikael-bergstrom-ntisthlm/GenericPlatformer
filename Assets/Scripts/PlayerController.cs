@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,7 +11,7 @@ public class PlayerController : MonoBehaviour
   float walkSpeed = 1;
 
   [SerializeField]
-  float jumpForce = 3000;
+  float jumpForce = 20;
 
   Rigidbody2D rBody;
   GroundCheckController groundChecker;
@@ -59,10 +61,19 @@ public class PlayerController : MonoBehaviour
 
   private void OnCollisionEnter2D(Collision2D other)
   {
-    print(other.gameObject.tag);
     if (other.gameObject.tag == "Enemy")
     {
-      GetComponent<DeathAnimController>().Death();
+      List<Collider2D> colliders = new();
+      if (Physics2D.OverlapBoxAll(BottomBoxPosition, BottomBoxSize, 0).Contains(other.collider))
+      {
+        rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        other.gameObject.GetComponent<DeathAnimController>().Death();
+      }
+      else
+      {
+        GetComponent<DeathAnimController>().Death();
+      }
+
     }
   }
 
