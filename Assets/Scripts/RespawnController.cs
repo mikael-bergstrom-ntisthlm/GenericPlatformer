@@ -7,14 +7,14 @@ public class RespawnController : MonoBehaviour
   [SerializeField]
   float bottomDeathzoneY = -5;
 
-  [SerializeField]
-  Canvas deathCanvas;
+  Canvas theCanvas;
 
   Vector3 respawnPosition;
 
   private void Awake()
   {
     respawnPosition = transform.position;
+    theCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
   }
 
   // Update is called once per frame
@@ -24,11 +24,12 @@ public class RespawnController : MonoBehaviour
     {
       transform.position = respawnPosition;
       GetComponent<DeathAnimController>().Reset();
-      if (deathCanvas)
+      if (theCanvas)
       {
-        deathCanvas.gameObject.SetActive(true);
-        Animator deathAnimator = deathCanvas.GetComponent<Animator>();
-        deathAnimator.Play("CanvasDeath", -1, 0f);
+        theCanvas.gameObject.SetActive(true);
+        Animator deathAnimator = theCanvas.GetComponent<Animator>();
+        deathAnimator.Play("Death", -1, 0f);
+        print("hey");
       }
     }
   }

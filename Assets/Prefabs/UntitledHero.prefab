@@ -102,16 +102,17 @@ GameObject:
   m_Component:
   - component: {fileID: 4411613739066871632}
   - component: {fileID: 8889326469087694956}
-  - component: {fileID: 478541356011617176}
+  - component: {fileID: 499713063720019774}
   - component: {fileID: 9039501276817673526}
   - component: {fileID: 3538856850843180302}
   - component: {fileID: 791108814034073810}
   - component: {fileID: 737403153346804582}
   - component: {fileID: 969352449015399806}
   - component: {fileID: 8438180900411724572}
+  - component: {fileID: 5374556166813055245}
   m_Layer: 0
   m_Name: UntitledHero
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,8 +185,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &478541356011617176
-CapsuleCollider2D:
+--- !u!61 &499713063720019774
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -217,8 +218,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 0.64, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
   m_Size: {x: 1, y: 2}
-  m_Direction: 0
+  m_EdgeRadius: 0
 --- !u!50 &9039501276817673526
 Rigidbody2D:
   serializedVersion: 4
@@ -303,7 +314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottomDeathzoneY: -4.19
-  deathCanvas: {fileID: 0}
 --- !u!114 &969352449015399806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +341,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca71320be803bcb488c458d8afac8355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundLayer:
+  deathJumpForce: 20
+  layersToIgnore:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 4294967295
+--- !u!114 &5374556166813055245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682108910456126295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f323f3a0586f6945a480eea24e08a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  moneyTextBox: {fileID: 0}
